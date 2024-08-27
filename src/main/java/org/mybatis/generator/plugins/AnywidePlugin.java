@@ -756,14 +756,13 @@ public class AnywidePlugin extends PluginAdapter {
 		}
 		if (this.enableUpdate && isPrimaryKey) {
 			method = getOtherInteger("updateByPrimaryKeySelective", introspectedTable, tableName, 1);
-			// method.removeAllBodyLines();
 			method.getBodyLines().clear();
 			method.setAbstract(true);
 			context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
 			_interface.addMethod(method);
 		}
 		if (this.enableInsert) {
-			method = getOtherInsertboolean("insertSelective", introspectedTable, tableName);
+			method = getOtherInsertBoolean("insertSelective", introspectedTable, tableName);
 			method.getBodyLines().clear();
 			method.setAbstract(true);
 			context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
@@ -771,7 +770,6 @@ public class AnywidePlugin extends PluginAdapter {
 		}
 		if (this.enableDelete && isPrimaryKey) {
 			method = getOtherInteger("deleteByPrimaryKey", introspectedTable, tableName, 2);
-			// method.removeAllBodyLines();
 			method.getBodyLines().clear();
 			method.setAbstract(true);
 			context.getCommentGenerator().addGeneralMethodComment(method, introspectedTable);
@@ -820,7 +818,7 @@ public class AnywidePlugin extends PluginAdapter {
 			topLevelClass.addMethod(method);
 		}
 		if (this.enableInsert) {
-			method = getOtherInsertboolean("insertSelective", introspectedTable, tableName);
+			method = getOtherInsertBoolean("insertSelective", introspectedTable, tableName);
 			method.addAnnotation("@Override");
 			method.addAnnotation("@Transactional(rollbackFor = { Exception.class })");
 			topLevelClass.addMethod(method);
@@ -945,7 +943,7 @@ public class AnywidePlugin extends PluginAdapter {
 		return method;
 	}
 
-	private Method getOtherInsertboolean(String methodName, IntrospectedTable introspectedTable, String tableName) {
+	private Method getOtherInsertBoolean(String methodName, IntrospectedTable introspectedTable, String tableName) {
 		Method method = new Method(methodName);
 		method.setReturnType(FullyQualifiedJavaType.getIntInstance());
 		method.addParameter(new Parameter(pojoType, toLowerCase(tableName)));
