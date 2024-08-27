@@ -2,7 +2,7 @@
 
 ## 模块介绍
 
-springcloud-mybatis-generator-core 是基于mybatis-generator-core进行二次开发实现的一套快速构建微服务的代码生成工具(生成版本SpringBoot 1.5x 对应spring cloud 1.3.1.RELEASE,如果是新版我会提交一个新版本的分支), 可以自动生成微服务的接口和实现类, 并且可以自动生成微服务的服务提供者和服务消费者以及前端的api和验证器.
+springcloud-mybatis-generator-core 是基于mybatis-generator-core进行二次开发实现的一套快速构建微服务的代码生成工具(生成版本SpringBoot3.2.0 springcloud 2023.0.0), 可以自动生成微服务的接口和实现类, 并且可以自动生成微服务的服务提供者和服务消费者以及前端的api和验证器.
 ### 1. 生成文件说明
  
 | 文件 | 所属模块 | 描述 |

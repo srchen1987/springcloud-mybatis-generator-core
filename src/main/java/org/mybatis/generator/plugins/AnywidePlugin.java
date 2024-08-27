@@ -121,7 +121,7 @@ public class AnywidePlugin extends PluginAdapter {
 				 "org.springframework.beans.factory.annotation.Autowired");
 			dBTransactionAnnotationType = new FullyQualifiedJavaType(
 				 "org.springframework.transaction.annotation.Transactional");
-			feignClientType = new FullyQualifiedJavaType("org.springframework.cloud.netflix.feign.FeignClient");
+			feignClientType = new FullyQualifiedJavaType("org.springframework.cloud.openfeign.FeignClient");
 		return true;
 	}
 
